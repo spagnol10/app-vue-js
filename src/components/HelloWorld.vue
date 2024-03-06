@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div v-for="(obj, index) in todos" v-bind:key="obj.id" class="todos-item">
-      <img v-if="obj.img" v-bind:src="obj.img" />
+    <div v-for="(obj, index) in todos" :key="obj.id" class="todos-item">
+      <img v-if="obj.img" :src="obj.img" />
       {{ index }} - {{ obj.text }}
     </div>
   </div>
