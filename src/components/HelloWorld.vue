@@ -1,10 +1,18 @@
 <template>
   <div>
+    <h1 :class="{ 'title' : true, 'title-home' : isHome}">
+      Curso VueJs
+    </h1>
+
     <div v-for="(obj, index) in todos" :key="obj.id" class="todos-item">
-      <img v-if="obj.img" :src="obj.img" />
       {{ index }} - {{ obj.text }}
     </div>
-  </div>
+
+    <p class="paragrafo">
+      Lora ipsum dolor sit amet, consectetur adipiscing elit. 
+
+    </p>
+</div>
 </template>
 
 <script>
@@ -12,6 +20,8 @@ export default {
   name: "App",
   data() {
     return {
+      isHome: false,
+      classTitle: "title",
       todos: [
         {
           id: 1,
@@ -25,8 +35,16 @@ export default {
           done: false,
           img: "https://picsum.photos/200/300",
         },
-        { id: 3, text: "Play around in JSFiddle", done: true },
-        { id: 4, text: "Build something awesome", done: true },
+        {
+          id: 3,
+          text: "Play around in JSFiddle",
+          done: true,
+        },
+        {
+          id: 4,
+          text: "Build something awesome",
+          done: true,
+        },
       ],
     };
   },
@@ -35,6 +53,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.paragrafo {
+  color: #42b983;
+  font-size: 2rem;
+}
+
+.title-home {
+  color: #fd0000;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  color: #42b983;
+}
+
 .todos-item {
   margin: 10px;
   padding: 10px;
