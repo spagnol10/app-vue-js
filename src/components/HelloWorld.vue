@@ -47,6 +47,17 @@
       </div>
       {{ contract }}
     </div>
+
+    <div>
+      <button @click="onClick()">click</button>
+    </div>
+
+    <br />
+
+    <div @mouseover="mouseOver()"
+          @mouseout="mouseOut()">
+      Mouse
+    </div>
   </div>
 </template>
 
@@ -62,12 +73,25 @@ export default {
       // sports: ["Soccer", "Basketball", "Baseball"],
     };
   },
+
+  methods: {
+    onClick() {
+      console.log("Clicked");
+    },
+
+    mouseOver() {
+      console.log("Mouse over");
+    },
+    mouseOut() {
+      console.log("Mouse Out");
+    },
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.home{
+.home {
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -121,11 +145,12 @@ export default {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+}
 
-  .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 </style>
